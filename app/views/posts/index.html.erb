@@ -1,42 +1,64 @@
+
 <nav class="navbar navbar-default navbar-fixed-top" >
   <div class="container">
    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Posts<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Posts<span class="sr-only">(current)</span></a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
 </nav>
+
+<!-- Adapted this sidebar theme from http://bootsnipp.com/snippets/featured/user-profile-sidebar -->
 <div class="container">
-  <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
-    <% @posts.each do |post| %>
-    <div class="col-xs-12">
-      <div class="text-center">
-        <h2><%= post.title %></h2>
-        <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
-      </div>
-
-      <div>
-        <%= raw(post.body).truncate(358) %>
-      </div>
-
-      <div class="text-center">
-        <%= link_to "READ MORE", post_path(post) %>
-      </div>
-      <br>
+  <div class="row profile">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img src=<%= image_url('vinnie.jpg') %> class="img-responsive" alt="">
+        </div>
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+           Vinnie Vendemia
+         </div>
+         <div class="profile-usertitle-job">
+          Software Engineer
+        </div>
+      </div>        
     </div>
-    <% end %>
+  </div>
+  <div class="col-md-9">
+    <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
+      <% @posts.each do |post| %>
+      <div class="col-xs-12">
+        <div class="text-center">
+          <h2><%= post.title %></h2>
+          <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
+        </div>
+
+        <div>
+          <%= raw(post.body).truncate(358) %>
+        </div>
+
+        <div class="text-center">
+          <%= link_to "READ MORE", post_path(post) %>
+        </div>
+        <br>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
