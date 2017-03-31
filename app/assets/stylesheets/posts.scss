@@ -4,34 +4,33 @@
 
 .navbar .navbar-nav {
     display: inline;
-    float: none;
+    float: left;
     vertical-align: top;
 }
 
 .navbar .navbar-collapse {
     text-align: center;
+    margin-bottom: 0px;
 }
 
-body { padding-top: 70px}
+body { padding-top: 50px; height:100%; }
 
 .logo-wrapper {
 	padding: 100px inherit;
 	display: inline-block;
 }
 
-.container{
-   width:100%;
-}
-
 /* Profile container */
 .profile {
-  margin: 20px 0;
+  margin: 0px 0px 20px;
+  min-height:100%;
 }
 
 /* Profile sidebar */
 .profile-sidebar {
   padding: 20px 0 10px 0;
-  background: #fff;
+  min-height:100%;
+  background: #093145;
 }
 
 .profile-userpic img {
