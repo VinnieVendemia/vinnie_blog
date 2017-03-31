@@ -22,6 +22,7 @@
 </nav>
 
 <!-- Adapted this sidebar theme from http://bootsnipp.com/snippets/featured/user-profile-sidebar -->
+<div class="container">
 <div class="row profile">
     <div class="col-md-3">
       <div class="profile-sidebar">
@@ -39,8 +40,8 @@
       </div>        
     </div>
   </div>
-  <div class="col-md-9">
-    <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
+  <div class="col-md-9 blog-wrapper">
+    <div class="col-sm-10 col-sm col-xs-12 blog-content">
       <% @posts.each do |post| %>
       <div class="col-xs-12">
         <div class="text-center">
@@ -60,4 +61,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>
