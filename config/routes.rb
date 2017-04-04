@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resources :posts
+
+  get '/about' => 'about#index' # or match for older Rails versions
+	resources :about
 end
